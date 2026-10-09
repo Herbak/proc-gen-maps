@@ -1,0 +1,54 @@
+{
+  "name": "proc-gen-maps",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Procedural world map generation for RPG games.",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./pixi": {
+      "types": "./dist/pixi/index.d.ts",
+      "import": "./dist/pixi/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite --config playground/vite.config.ts",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "build:playground": "vite build --config playground/vite.config.ts",
+    "preview": "vite preview --config playground/vite.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "sample": "node scripts/render-sample.mjs"
+  },
+  "peerDependencies": {
+    "pixi.js": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "pixi.js": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@types/node": "^26.6.4",
+    "fast-png": "^8.0.0",
+    "pixi.js": "^8.22.0",
+    "simplex-noise": "^4.0.3",
+    "svelte": "^5.57.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.3"
+  }
+}

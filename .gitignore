@@ -1,0 +1,21 @@
+# deps
+node_modules/
+
+# build output
+dist/
+playground/dist/
+samples/
+
+# vite / tooling caches
+.vite/
+*.tsbuildinfo
+
+# editor / os
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# logs
+*.log
+npm-debug.log*
